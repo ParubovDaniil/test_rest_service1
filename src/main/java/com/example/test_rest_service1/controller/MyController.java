@@ -1,8 +1,8 @@
-package com.example.test_rest_service.controller;
+package com.example.test_rest_service1.controller;
 
-import com.example.test_rest_service.model.Request;
-import com.example.test_rest_service.model.Response;
-import com.example.test_rest_service.service.MyModifyService;
+import com.example.test_rest_service1.model.Request;
+import com.example.test_rest_service1.model.Response;
+import com.example.test_rest_service1.service.MyModifyService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -24,7 +24,7 @@ public class MyController {
 
     @PostMapping(value = "/feedback")
     public ResponseEntity<Response> feedback(@RequestBody Request request){
-        log.info("Входящий request: "+ String.valueOf(request));
+        log.warn("Входящий request: "+ String.valueOf(request));
         Response response = Response.builder()
                 .uid(request.getUid())
                 .operationUid(request.getOperationUid())
